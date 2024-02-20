@@ -1,0 +1,90 @@
+.container, .container2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: coral;
+  min-height: 50px;
+  height: max-content;
+  min-width: 600px;
+  max-width: 700px;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 10px;
+  overflow: visible;
+  text-align: start;
+  opacity: 90%;
+  transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 100%;
+    transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+}
+
+.container2 {
+  background-color: #c0d3b5;
+}
+
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 20px;
+
+  &:checked {
+    background-color: teal;
+  }
+}
+
+.text {
+  text-decoration: none;
+}
+
+.text2 {
+  text-decoration: line-through;
+  opacity: 20%;
+}
+
+.text, .text2 {
+  display: flex;
+  justify-content: flex-start;
+  text-align: start;
+  align-items: center;
+  flex-grow: 1;
+
+  margin-right: 10px;
+}
+
+.button {
+  svg {
+    fill: black;
+    font-size: 27px;
+    transition: fill 0.3s ease-in-out, font-size 0.3s ease-in-out;
+
+
+    &:hover {
+
+      fill: red;
+      font-size: 35px;
+      transition: fill 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    }
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  min-width: 60px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: fill 0.3s ease-in-out, font-size 0.3s ease-in-out;
+
+
+}
