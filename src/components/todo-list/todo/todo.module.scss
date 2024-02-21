@@ -5,23 +5,24 @@
   align-items: center;
   background-color: coral;
   min-height: 50px;
-  //height: max-content;
+  height: max-content;
   min-width: 600px;
   max-width: 80vw;
   border-radius: 5px;
   width: 100%;
   padding-left: 10px;
-  overflow: visible;
+  overflow: scroll;
   text-align: start;
   opacity: 90%;
   transition: box-shadow 0.1s ease-in-out, opacity 0.1s ease-in-out;
-position: relative;
+  position: relative;
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     opacity: 100%;
     transition: box-shadow 0.1s ease-in-out, opacity 0.1s ease-in-out;
   }
+
   z-index: 1;
 }
 
@@ -34,8 +35,8 @@ position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px ;
-  height: 25px ;
+  width: 25px;
+  height: 25px;
   margin-right: 20px;
 
   &:checked {
@@ -59,28 +60,31 @@ position: relative;
   align-items: center;
   flex-grow: 1;
   max-width: 900px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   white-space: normal;
   //hyphens: auto;
   word-break: break-word;
+  overflow: scroll;
 
 }
 
 .button {
   position: relative;
+
   svg {
     fill: black;
     font-size: 27px;
     transition: fill 0.2s ease-in-out, font-size 0.1s ease-in-out;
 
     &:hover {
+      transition: fill 0.1s ease-in-out, font-size 0.1s ease-in-out;
       fill: red;
       font-size: 32px;
-      transition: fill 0.1s ease-in-out, font-size 0.1s ease-in-out;
     }
 
   }
+
   z-index: 2;
 
   display: flex;
