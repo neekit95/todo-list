@@ -46,4 +46,7 @@
   border: none;
   cursor: pointer;
   margin-left: 20px;
+  &:hover {
+    opacity: 80%;
+  }
 }

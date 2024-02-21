@@ -4,14 +4,13 @@ import style from './todo-list.module.scss';
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 const todoList = () => {
+
 	const [todos, setTodos] = useState([]);
 	const [text, setText] = useState('');
 
 	function handleChange(e) {
 		setText(e.target.value);
 	}
-
-
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -20,8 +19,7 @@ const todoList = () => {
 			done: false,
 			id: todos.length + 1,
 		}
-		setTodos([...todos, newTodo]);
-		setText('');
+		newTodo.text.trim() ? setTodos([...todos, newTodo]) : setText('');
 	}
 
 	function handleKeyPress (e) {
