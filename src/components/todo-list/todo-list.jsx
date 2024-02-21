@@ -20,6 +20,7 @@ const todoList = () => {
 			id: todos.length + 1,
 		}
 		newTodo.text.trim() ? setTodos([...todos, newTodo]) : setText('');
+		setText('');
 	}
 
 	function handleKeyPress (e) {
@@ -51,9 +52,10 @@ const todoList = () => {
 
 			{todos.map((todo, index) => (
 				<Todo
-					key={index}
-					id={index}
+					key={index+1}
+					id={index+1}
 					text={todo.text}
+					count={index+1}
 				/>
 			))}
 		</div>
