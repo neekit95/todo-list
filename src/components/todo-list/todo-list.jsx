@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Todo from "./todo/todo";
 import style from './todo-list.module.scss';
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const todoList = () => {
 
@@ -28,6 +29,9 @@ const todoList = () => {
 			handleSubmit(e);
 		}
 	}
+	function deleteAll () {
+		setTodos([]);
+	}
 
 	return (
 		<div className={style.container}>
@@ -50,14 +54,24 @@ const todoList = () => {
 				</button>
 			</div>
 
-			{todos.map((todo, index) => (
-				<Todo
-					key={index+1}
-					id={index+1}
-					text={todo.text}
-					count={index+1}
-				/>
-			))}
+			<div className={style.todos}>
+				{todos.map((todo, index) => (
+					<Todo
+						key={index+1}
+						id={index+1}
+						text={todo.text}
+						count={index+1}
+					/>
+				))}
+			</div>
+
+			<button
+				className={style.buttonDelete}
+				onClick={deleteAll}
+			>
+				<p className={style.p}> Delete all</p>
+				<DeleteForeverIcon />
+			</button>
 		</div>
 	);
 };
