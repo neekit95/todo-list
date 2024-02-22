@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Todo from "./todo/todo";
 import style from './todo-list.module.scss';
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import {v4 as uuidv4} from 'uuid';
 
 const todoList = () => {
 
@@ -18,11 +19,16 @@ const todoList = () => {
 		const newTodo = {
 			text: text,
 			done: false,
-			id: todos.length + 1,
+			id: uuidv4(),
 		}
 		newTodo.text.trim() ? setTodos([...todos, newTodo]) : setText('');
 		setText('');
 	}
+
+	useEffect(() => {
+		console.clear()
+		console.log('todos', todos)
+	}, [todos]);
 
 	function handleKeyPress (e) {
 		if (e.key === 'Enter') {
@@ -31,6 +37,10 @@ const todoList = () => {
 	}
 	function deleteAll () {
 		setTodos([]);
+	}
+	function deleteTodo (id) {
+		const newArray = todos.filter(todo => todo.id !== id);
+		setTodos(newArray)
 	}
 
 	return (
@@ -57,10 +67,11 @@ const todoList = () => {
 			<div className={style.todos}>
 				{todos.map((todo, index) => (
 					<Todo
-						key={index+1}
-						id={index+1}
+						key={todo.id}
+						id={todo.id}
 						text={todo.text}
 						count={index+1}
+						deleteTodo={()=>deleteTodo(todo.id)}
 					/>
 				))}
 			</div>

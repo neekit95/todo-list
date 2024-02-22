@@ -11,28 +11,28 @@ const Todo = (props) => {
 		setChecked(!checked);
 	}
 
+	function deleteTodo () {
+		props.deleteTodo(props.id);
+	}
+
 	return (
 		<div
 			className={ done ? style.container2 : style.container}
 			onClick={handleClick}
 		>
-			{/*<input*/}
-			{/*	className={style.checkbox}*/}
-			{/*	type="checkbox"*/}
-			{/*	checked={checked}*/}
-			{/*/>*/}
-
 			<div className={style.counter}>
 				{props.count}.
 			</div>
 
 			<p className={ done ? style.text2 : style.text}>
-
 				{props.text}
 			</p>
-			<div className={style.button}>
-				<DeleteIcon />
 
+			<div
+				className={style.button}
+				onClick={deleteTodo}
+			>
+				<DeleteIcon />
 			</div>
 		</div>
 
