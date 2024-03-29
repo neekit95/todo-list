@@ -6,10 +6,11 @@ import Homepage from "./views/homepage/homepage";
 function App() {
   return (
     <main className={style.app}>
-         <Routes>
-             <Route path="/"  element={<Homepage/>}/>
-             <Route path="*" element={<NotFoundPage/>} />
-         </Routes>
+        <Homepage />
+         {/*<Routes>*/}
+         {/*    <Route path="/"  element={<Homepage/>}/>*/}
+         {/*    <Route path="*" element={<NotFoundPage/>} />*/}
+         {/*</Routes>*/}
     </main>
   );
 }
